@@ -113,7 +113,7 @@ class _SplashScreenState extends State<SplashScreen>
                 ? FittedBox(
                     fit: BoxFit.contain,
                     child: SizedBox(
-                      width: controller!.value.size.width,
+                      width: controller.value.size.width,
                       height: controller.value.size.height,
                       child: VideoPlayer(controller),
                     ),
@@ -123,7 +123,7 @@ class _SplashScreenState extends State<SplashScreen>
                     height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.1),
+                      color: Colors.white.withValues(alpha: 0.1),
                     ),
                     child: const Center(
                       child: CircularProgressIndicator(
