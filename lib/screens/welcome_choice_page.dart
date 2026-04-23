@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../app_branding.dart';
@@ -137,224 +135,201 @@ class _WelcomeChoicePageState extends State<WelcomeChoicePage>
                             opacity: _cardFade,
                             child: SlideTransition(
                               position: _cardSlide,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(24),
-                                child: BackdropFilter(
-                                  filter: ImageFilter.blur(
-                                    sigmaX: 14,
-                                    sigmaY: 14,
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF141414).withAlpha(226),
+                                  borderRadius: BorderRadius.circular(24),
+                                  border: Border.all(
+                                    color: Colors.white.withAlpha(20),
                                   ),
-                                  child: Container(
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: const Color(
-                                        0xFF141414,
-                                      ).withAlpha(208),
-                                      borderRadius: BorderRadius.circular(24),
-                                      border: Border.all(
-                                        color: Colors.white.withAlpha(20),
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withAlpha(40),
-                                          blurRadius: 28,
-                                          offset: const Offset(0, 16),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withAlpha(32),
+                                      blurRadius: 20,
+                                      offset: const Offset(0, 10),
+                                    ),
+                                  ],
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    const Wrap(
+                                      spacing: 8,
+                                      runSpacing: 8,
+                                      children: [
+                                        _FeatureChip(
+                                          icon: Icons.auto_awesome_outlined,
+                                          label: 'Holistic Growth',
+                                        ),
+                                        _FeatureChip(
+                                          icon: Icons.menu_book_outlined,
+                                          label: 'Beyond Exams',
+                                        ),
+                                        _FeatureChip(
+                                          icon: Icons.person_outline,
+                                          label: 'Personalized Path',
                                         ),
                                       ],
                                     ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const Wrap(
-                                          spacing: 8,
-                                          runSpacing: 8,
-                                          children: [
-                                            _FeatureChip(
-                                              icon: Icons.auto_awesome_outlined,
-                                              label: 'Holistic Growth',
-                                            ),
-                                            _FeatureChip(
-                                              icon: Icons.menu_book_outlined,
-                                              label: 'Beyond Exams',
-                                            ),
-                                            _FeatureChip(
-                                              icon: Icons.person_outline,
-                                              label: 'Personalized Path',
-                                            ),
-                                          ],
+                                    const SizedBox(height: 14),
+                                    Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: kBrandGold.withAlpha(20),
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: kBrandGold.withAlpha(50),
                                         ),
-                                        const SizedBox(height: 14),
-                                        Container(
-                                          padding: const EdgeInsets.all(12),
-                                          decoration: BoxDecoration(
-                                            color: kBrandGold.withAlpha(20),
-                                            borderRadius: BorderRadius.circular(
-                                              12,
-                                            ),
-                                            border: Border.all(
-                                              color: kBrandGold.withAlpha(50),
-                                            ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Join IEEO++',
+                                            style: theme.textTheme.titleMedium
+                                                ?.copyWith(
+                                                  color: kBrandGold,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
                                           ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Join IEEO++',
-                                                style: theme
-                                                    .textTheme
-                                                    .titleMedium
-                                                    ?.copyWith(
-                                                      color: kBrandGold,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                    ),
-                                              ),
-                                              const SizedBox(height: 6),
-                                              Text(
-                                                'Participate in the International Ethical Entrepreneurship Olympiad +++ (IEEO++), India\'s most innovative competition for students in Classes 6-12. Test your real-world skills, creativity, and entrepreneurial thinking to earn international-level recognition, certificates, and prizes!',
-                                                style: theme.textTheme.bodySmall
-                                                    ?.copyWith(
-                                                      color: Colors.white70,
-                                                      height: 1.4,
-                                                    ),
-                                              ),
-                                            ],
+                                          const SizedBox(height: 6),
+                                          Text(
+                                            'Participate in the International Ethical Entrepreneurship Olympiad +++ (IEEO++), India\'s most innovative competition for students in Classes 6-12. Test your real-world skills, creativity, and entrepreneurial thinking to earn international-level recognition, certificates, and prizes!',
+                                            style: theme.textTheme.bodySmall
+                                                ?.copyWith(
+                                                  color: Colors.white70,
+                                                  height: 1.4,
+                                                ),
                                           ),
-                                        ),
-                                        const SizedBox(height: 14),
-                                        FadeTransition(
-                                          opacity: _buttonFade,
-                                          child: Column(
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 14),
+                                    FadeTransition(
+                                      opacity: _buttonFade,
+                                      child: Column(
+                                        children: [
+                                          Row(
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: ElevatedButton(
-                                                      style: ElevatedButton.styleFrom(
-                                                        backgroundColor:
-                                                            kBrandGold,
-                                                        foregroundColor:
-                                                            kBrandBlack,
-                                                        elevation: 0,
-                                                        padding:
-                                                            const EdgeInsets.symmetric(
-                                                              vertical: 14,
-                                                            ),
-                                                        shape: RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                16,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      onPressed: () => widget
-                                                          .onActionSelected(
-                                                            'Login',
-                                                          ),
-                                                      child: const Text(
-                                                        'Login',
-                                                        style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const SizedBox(width: 10),
-                                                  Expanded(
-                                                    child: OutlinedButton(
-                                                      style: OutlinedButton.styleFrom(
-                                                        foregroundColor:
-                                                            Colors.white,
-                                                        side: BorderSide(
-                                                          color: kBrandGold
-                                                              .withAlpha(165),
-                                                        ),
-                                                        padding:
-                                                            const EdgeInsets.symmetric(
-                                                              vertical: 14,
-                                                            ),
-                                                        shape: RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                16,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      onPressed: () => widget
-                                                          .onActionSelected(
-                                                            'Sign Up',
-                                                          ),
-                                                      child: const Text(
-                                                        'Sign Up',
-                                                        style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              const SizedBox(height: 10),
-                                              SizedBox(
-                                                width: double.infinity,
-                                                child: TextButton(
-                                                  style: TextButton.styleFrom(
+                                              Expanded(
+                                                child: ElevatedButton(
+                                                  style: ElevatedButton.styleFrom(
+                                                    backgroundColor: kBrandGold,
                                                     foregroundColor:
-                                                        Colors.white,
+                                                        kBrandBlack,
+                                                    elevation: 0,
                                                     padding:
                                                         const EdgeInsets.symmetric(
-                                                          vertical: 12,
+                                                          vertical: 14,
                                                         ),
                                                     shape: RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            14,
+                                                            16,
                                                           ),
                                                     ),
-                                                    backgroundColor: Colors
-                                                        .white
-                                                        .withAlpha(10),
                                                   ),
-                                                  onPressed: () =>
-                                                      widget.onActionSelected(
-                                                        'Continue without account',
+                                                  onPressed: () => widget
+                                                      .onActionSelected(
+                                                        'Login',
                                                       ),
                                                   child: const Text(
-                                                    'Continue without account',
+                                                    'Login',
                                                     style: TextStyle(
-                                                      fontSize: 14,
+                                                      fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.w600,
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(width: 10),
+                                              Expanded(
+                                                child: OutlinedButton(
+                                                  style: OutlinedButton.styleFrom(
+                                                    foregroundColor:
+                                                        Colors.white,
+                                                    side: BorderSide(
+                                                      color: kBrandGold
+                                                          .withAlpha(165),
+                                                    ),
+                                                    padding:
+                                                        const EdgeInsets.symmetric(
+                                                          vertical: 14,
+                                                        ),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            16,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  onPressed: () => widget
+                                                      .onActionSelected(
+                                                        'Sign Up',
+                                                      ),
+                                                  child: const Text(
+                                                    'Sign Up',
+                                                    style: TextStyle(
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Align(
-                                          alignment: Alignment.center,
-                                          child: TextButton(
-                                            onPressed: widget.onLearnMore,
-                                            child: const Text(
-                                              'Learn more about TTT',
-                                              style: TextStyle(
-                                                color: Colors.white70,
+                                          const SizedBox(height: 10),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: TextButton(
+                                              style: TextButton.styleFrom(
+                                                foregroundColor: Colors.white,
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      vertical: 12,
+                                                    ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(14),
+                                                ),
+                                                backgroundColor: Colors.white
+                                                    .withAlpha(10),
+                                              ),
+                                              onPressed: () =>
+                                                  widget.onActionSelected(
+                                                    'Continue without account',
+                                                  ),
+                                              child: const Text(
+                                                'Continue without account',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
+                                    const SizedBox(height: 4),
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: TextButton(
+                                        onPressed: widget.onLearnMore,
+                                        child: const Text(
+                                          'Learn more about TTT',
+                                          style: TextStyle(
+                                            color: Colors.white70,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

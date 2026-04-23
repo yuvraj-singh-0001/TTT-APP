@@ -12,12 +12,7 @@ class MyHomePage extends StatelessWidget {
     } else if (action == 'Sign Up') {
       Navigator.of(context).pushNamed('/signup');
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('$action screen next step me connect kar denge.'),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+      // Handle other cases
     }
   }
 

@@ -24,7 +24,15 @@ class BrandLogo extends StatelessWidget {
       kBrandLogoAsset,
       width: width,
       fit: fit,
-      filterQuality: FilterQuality.high,
+      filterQuality: FilterQuality.medium,
+      errorBuilder: (context, error, stackTrace) {
+        return SizedBox(
+          width: width,
+          child: const Center(
+            child: Icon(Icons.school, color: kBrandGold, size: 48),
+          ),
+        );
+      },
     );
   }
 }

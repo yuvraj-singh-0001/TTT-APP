@@ -57,7 +57,9 @@ class _LaunchShellState extends State<_LaunchShell> {
   bool _showSplash = true;
 
   void _handleSplashFinished() {
-    if (!mounted) return;
+    if (!mounted) {
+      return;
+    }
     setState(() {
       _showSplash = false;
     });
